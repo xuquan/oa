@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InitDatas>
+	<Modules>
+		<Module name="个人办公" sn="personaloffice" url="" orderNo="10">
+			<Module name="我的办公桌" sn="myworkbeach" url="task.do?method=doesTask" orderNo="1010"/>
+			<Module name="通信录" sn="addresslist" url="addresslist.do" orderNo="1040"/>
+		</Module>	
+		<Module name="公文管理" sn="doc" url="" orderNo="20">
+			<Module name="公文维护" sn="document" url="document.do" orderNo="2010"/>
+			<Module name="归档处理" sn="arch" url="document.do?method=searchAllFinishedDocuments" orderNo="2020"/>
+		</Module>
+		<Module name="公共信息" sn="pubinfo" url="" orderNo="30">
+			<Module name="信息管理" sn="infomgr" url="info.do" orderNo="3010"/>
+		</Module>
+		<Module name="行政办公" sn="puboffice" url="" orderNo="40">
+			<Module name="会议管理" sn="meeting" url="meeting.do" orderNo="4010"/>
+			<Module name="用品管理" sn="usething" url="usething.do" orderNo="4030"/>
+			<Module name="车辆管理" sn="car" url="car.do" orderNo="4040"/>
+		</Module>
+		<Module name="消息管理" sn="mail" url="" orderNo="50">
+			<Module name="收件箱" sn="inbox" url="message.do?method=inbox" orderNo="5010"/>
+			<Module name="发件箱" sn="outbox" url="message.do?method=outbox" orderNo="5020"/>
+			<Module name="垃圾箱" sn="trash" url="message.do?method=trash" orderNo="5030"/>
+			<Module name="聊天记录" sn="record" url="message.do?method=record" orderNo="5040"/>
+		</Module>		
+		<Module name="工作流程" sn="workflow" url="" orderNo="60">
+			<Module name="流程管理" sn="flow" url="workflow.do" orderNo="6010"/>
+			<Module name="表单定义" sn="formdef" url="formdef.do" orderNo="6020"/>
+		</Module>
+		<Module name="组织管理" sn="orgmgr" url="" orderNo="70">
+			<Module name="机构管理" sn="org" url="org.do" orderNo="7010"/>
+			<Module name="人员管理" sn="person" url="person.do" orderNo="7020"/>
+		</Module>
+		<Module name="权限管理" sn="auth" url="" orderNo="80">
+			<Module name="模块管理" sn="module" url="module.do" orderNo="8010"/>
+			<Module name="角色管理" sn="role" url="role.do" orderNo="8020"/>
+			<Module name="用户管理" sn="user" url="user.do" orderNo="8030"/>
+		</Module>
+		<Module name="系统管理" sn="sytemmgr" url="" orderNo="90">
+			<Module name="密码修改" sn="chgpsw" url="user.do?method=chgpsw" orderNo="9010"/>
+		</Module>
+	</Modules>
+	<Roles>
+		<Role name="系统管理员">
+			<Acl module="个人办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="我的办公桌" C="true" R="true" U="true" D="true"/>
+			<Acl module="通信录" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文维护" C="true" R="true" U="true" D="true"/>
+			<Acl module="归档处理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公共信息" C="true" R="true" U="true" D="true"/>
+			<Acl module="信息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="行政办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="会议管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用品管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="车辆管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="消息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="收件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="发件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="垃圾箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="聊天记录" C="true" R="true" U="true" D="true"/>
+			<Acl module="工作流程" C="true" R="true" U="true" D="true"/>
+			<Acl module="流程管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="表单定义" C="true" R="true" U="true" D="true"/>
+			<Acl module="组织管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="机构管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="人员管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="权限管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="模块管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="角色管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用户管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="系统管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="密码修改" C="true" R="true" U="true" D="true"/>
+		</Role>
+		<Role name="普通员工">
+			<Acl module="个人办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="我的办公桌" C="true" R="true" U="true" D="true"/>
+			<Acl module="通信录" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文维护" C="true" R="true" U="true" D="true"/>
+			<Acl module="归档处理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公共信息" C="true" R="true" U="true" D="true"/>
+			<Acl module="信息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="行政办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="会议管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用品管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="车辆管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="消息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="收件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="发件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="垃圾箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="聊天记录" C="true" R="true" U="true" D="true"/>
+		</Role>
+		<Role name="部门领导">
+			<Acl module="个人办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="我的办公桌" C="true" R="true" U="true" D="true"/>
+			<Acl module="通信录" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文维护" C="true" R="true" U="true" D="true"/>
+			<Acl module="归档处理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公共信息" C="true" R="true" U="true" D="true"/>
+			<Acl module="信息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="行政办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="会议管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用品管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="车辆管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="消息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="收件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="发件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="垃圾箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="聊天记录" C="true" R="true" U="true" D="true"/>
+			<Acl module="工作流程" C="true" R="true" U="true" D="true"/>
+			<Acl module="流程管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="表单定义" C="true" R="true" U="true" D="true"/>
+			<Acl module="组织管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="机构管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="人员管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="权限管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="模块管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="角色管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用户管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="系统管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="密码修改" C="true" R="true" U="true" D="true"/>
+		</Role>
+		<Role name="总书记">
+			<Acl module="个人办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="我的办公桌" C="true" R="true" U="true" D="true"/>
+			<Acl module="通信录" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文维护" C="true" R="true" U="true" D="true"/>
+			<Acl module="归档处理" C="true" R="true" U="true" D="true"/>
+			<Acl module="公共信息" C="true" R="true" U="true" D="true"/>
+			<Acl module="信息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="行政办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="会议管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用品管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="车辆管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="消息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="收件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="发件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="垃圾箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="聊天记录" C="true" R="true" U="true" D="true"/>
+			<Acl module="工作流程" C="true" R="true" U="true" D="true"/>
+			<Acl module="流程管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="表单定义" C="true" R="true" U="true" D="true"/>
+			<Acl module="组织管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="机构管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="人员管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="权限管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="模块管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="角色管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="用户管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="系统管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="密码修改" C="true" R="true" U="true" D="true"/>
+		</Role>
+		<Role name="档案管理员">
+			<Acl module="个人办公" C="true" R="true" U="true" D="true"/>
+			<Acl module="我的办公桌" C="true" R="true" U="true" D="true"/>
+			<Acl module="通信录" C="true" R="true" U="true" D="true"/>
+			<Acl module="公文管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="归档处理" C="true" R="true" U="true" D="true"/>
+			<Acl module="消息管理" C="true" R="true" U="true" D="true"/>
+			<Acl module="收件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="发件箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="垃圾箱" C="true" R="true" U="true" D="true"/>
+			<Acl module="聊天记录" C="true" R="true" U="true" D="true"/>
+		</Role>
+	</Roles>
+	<Organizations>
+		<Org name="党政办公室">
+			<Person name="钱二" username="qe" password="qe" roles="总书记"/>
+			<Org name="组织部"/>
+			<Org name="宣传部"/>
+			<Org name="行政部">
+				<Org name="穗花南社区">
+					<Person name="卫一二" username="wye" password="wye" roles="部门领导"/>
+				</Org>
+				<Org name="汇源社区">
+					<Person name="蒋一三" username="jys" password="jys" roles="普通员工"/>
+				</Org>
+				<Org name="信和社区">
+					<Person name="沈一四" username="sys" password="sys" roles="普通员工"/>
+				</Org>
+				<Org name="昌岗中社区">
+					<Person name="韩一五" username="hyw" password="hyw" roles="普通员工"/>
+				</Org>
+				<Org name="晓园东社区">
+					<Person name="杨一六" username="yyl" password="yyl" roles="档案管理员"/>
+				</Org>
+			</Org>
+		</Org>
+		<Org name="社会治安综合治理办公室">
+			<Person name="孙三" username="ss" password="ss" roles="部门领导"/>
+			<Org name="人民武装部">
+				<Person name="周五" username="zw" password="zw" roles="普通员工"/>
+			</Org>
+			<Org name="城市管理办公室">
+				<Person name="郑七" username="zq" password="zq" roles="普通员工"/>
+			</Org>
+		</Org>
+		<Org name="经济协调发展办公室">
+			<Person name="李四" username="ls" password="ls" roles="普通员工"/>
+		</Org>
+		<Org name="财政财税所">
+			<Person name="吴六" username="wl" password="wl" roles="普通员工"/>
+		</Org>
+		<Org name="社会事务管理办公室">
+			<Person name="王八" username="wb" password="wb" roles="普通员工"/>
+		</Org>
+		<Org name="计划生育办公室">
+			<Person name="冯九" username="fj" password="fj" roles="普通员工"/>
+		</Org>
+		<Org name="劳动保障和最低生活保障管理服务站">
+			<Person name="陈十" username="cs" password="cs" roles="普通员工"/>
+		</Org>
+		<Org name="联合工会">
+			<Person name="诸一一" username="zyy" password="zyy" roles="档案管理员"/>
+		</Org>
+		<Org name="技术服务部">
+			<Person name="赵一" username="zy" password="zy" roles="系统管理员"/>
+		</Org>
+	</Organizations>
+</InitDatas>

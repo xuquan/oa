@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+  <class lazy="false" table="t_user" name="cn.edu.zhku.oa.model.User">
+    <id name="id">
+      <generator class="native"/>
+    </id>
+    <property name="username" unique="true" not-null="true"/>
+    <property name="password" not-null="true"/>
+    <property name="createTime"/>
+    <property name="expireTime"/>
+    <many-to-one unique="true" name="person"/>
+    <set inverse="true" lazy="false" name="cars">
+      <key column="user_car_id"/>
+      <one-to-many class="cn.edu.zhku.oa.model.Car"/>
+    </set>
+    <set inverse="true" lazy="false" name="addressBooks">
+      <key column="userId"/>
+      <one-to-many class="cn.edu.zhku.oa.model.AddressBook"/>
+    </set>
+    <set inverse="true" lazy="false" name="infos">
+      <key column="user_info_id"/>
+      <one-to-many class="cn.edu.zhku.oa.model.Info"/>
+    </set>
+    <set inverse="true" lazy="false" name="mails">
+      <key column="user_mail_id"/>
+      <one-to-many class="cn.edu.zhku.oa.model.Mail"/>
+    </set>
+    <one-to-one name="mailUser" cascade="all"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class lazy="false" table="t_car" name="cn.edu.zhku.oa.model.Car">
+    <id name="id">
+      <generator class="native"/>
+    </id>
+    <property name="name"/>
+    <property name="carNumber"/>
+    <property name="carLoad"/>
+    <property name="applyDate"/>
+    <property name="returnDate"/>
+    <many-to-one column="user_car_id" name="user"/>
+    <property name="status"/>
+  </class>
+</hibernate-mapping>

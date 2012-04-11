@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="t_addressBook" name="cn.edu.zhku.oa.model.AddressBook">
+    <id name="id">
+      <generator class="native"/>
+    </id>
+    <property name="name" not-null="true"/>
+    <property name="email" not-null="true"/>
+    <property name="mobilePhone"/>
+    <property name="phs"/>
+    <property name="nickName"/>
+    <property name="birthday"/>
+    <property name="street"/>
+    <property name="company"/>
+    <property name="notes"/>
+    <many-to-one column="userId" name="user"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="t_mail" name="cn.edu.zhku.oa.model.Mail">
+    <id name="id">
+      <generator class="native"/>
+    </id>
+    <property name="subject"/>
+    <property name="content"/>
+    <property name="sentDate"/>
+    <many-to-one column="user_mail_id" name="sender"/>
+    <array table="t_to_addrs" name="toAddrs">
+      <key column="id"/>
+      <list-index column="to_addres_index"/>
+      <element type="string" column="to_addrs"/>
+    </array>
+  </class>
+</hibernate-mapping>

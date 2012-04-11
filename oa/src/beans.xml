@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	<bean name="/login" class="cn.edu.zhku.oa.web.actions.LoginAction" scope="prototype">
+    	<property name="userManager" ref="userMgr"/>
+    	<property name="aclManager" ref="aclManager"/>
+    </bean>
+    <bean name="/index" class="cn.edu.zhku.oa.web.actions.IndexAction">
+    	<property name="aclManager" ref="aclManager"/>
+    </bean>
+    <bean name="/addresslist" class="cn.edu.zhku.oa.web.actions.AddressBookAction">
+    	<property name="addressBookManager" ref="addressBookManager"/>
+    </bean>
+	<bean name="/org" class="cn.edu.zhku.oa.web.actions.OrgAction" scope="prototype">
+		<property name="orgManager" ref="orgManager"/>
+	</bean>   
+	<bean name="/person" class="cn.edu.zhku.oa.web.actions.PersonAction" scope="prototype">
+		<property name="personManager" ref="personManager"/>
+	</bean> 
+	<bean name="/module" class="cn.edu.zhku.oa.web.actions.ModuleAction" scope="prototype">
+		<property name="moduleMgr" ref="moduleMgr"/>
+	</bean>
+	<bean name="/role" class="cn.edu.zhku.oa.web.actions.RoleAction" scope="prototype">
+		<property name="roleMgr" ref="roleMgr"/>
+	</bean>
+	<bean name="/user" class="cn.edu.zhku.oa.web.actions.UserAction" scope="prototype">
+		<property name="userMgr" ref="userMgr"/>
+		<property name="personMgr" ref="personManager"/>
+		<property name="roleMgr" ref="roleMgr"/>
+	</bean>
+	<bean name="/acl" class="cn.edu.zhku.oa.web.actions.AclAction" scope="prototype">
+		<property name="userMgr" ref="userMgr"/>
+		<property name="roleMgr" ref="roleMgr"/>
+		<property name="moduleMgr" ref="moduleMgr"/>
+	</bean>
+	<bean name="/workflow" class="cn.edu.zhku.oa.web.actions.WorkflowAction" scope="prototype">
+		<property name="workflowManager" ref="workflowManager"/>
+	</bean>
+	<bean name="/document" class="cn.edu.zhku.oa.web.actions.DocumentAction">
+		<property name="documentManager" ref="documentManager"/>
+		<property name="workflowManager" ref="workflowManager"/>
+	</bean>
+	<bean name="/system" class="cn.edu.zhku.oa.web.actions.SystemAction" scope="prototype">
+		<property name="userManager" ref="userMgr"/>
+	</bean>
+	<bean name="/meeting" class="cn.edu.zhku.oa.web.actions.MeetingRoomAction" scope="prototype">
+		<property name="meetingRoomManager" ref="meetingRoomManager"/>
+	</bean>
+	<bean name="/car" class="cn.edu.zhku.oa.web.actions.CarAction" scope="prototype">
+		<property name="carManager" ref="carManager"/>
+	</bean>
+	<bean name="/info" class="cn.edu.zhku.oa.web.actions.InfoAction" scope="prototype">
+		<property name="infoManager" ref="infoManager"/>
+	</bean>
+	<bean name="/category" class="cn.edu.zhku.oa.web.actions.CategoryAction" scope="prototype">
+		<property name="categoryManager" ref="categoryManager"/>
+	</bean>
+	<bean name="/usething" class="cn.edu.zhku.oa.web.actions.UseThingAction" scope="prototype">
+		<property name="useThingManager" ref="useThingManager"/>
+		<property name="categoryManager" ref="categoryManager"/>
+	</bean>
+	<bean name="/message" class="cn.edu.zhku.oa.web.actions.MailAction" scope="prototype">
+		<property name="mailManager" ref="mailManager"/>
+	</bean>
+	
+	
+	
+	<bean id="addressBookManager" class="cn.edu.zhku.oa.manager.impl.AddressBookManagerImpl">
+		<property name="addressBookDao" ref="addressBookDao"/>
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<bean id="addressBookDao" class="cn.edu.zhku.oa.dao.impl.AddressBookDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="orgManager" class="cn.edu.zhku.oa.manager.impl.OrgManagerImpl">
+		<property name="orgDao" ref="orgDao"/>
+	</bean>
+	<bean id="orgDao" class="cn.edu.zhku.oa.dao.impl.OrgDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="personManager" class="cn.edu.zhku.oa.manager.impl.PersonManagerImpl">
+		<property name="personDao" ref="personDao"/>
+		<property name="orgDao" ref="orgDao"/>
+	</bean>
+	<bean id="personDao" class="cn.edu.zhku.oa.dao.impl.PersonDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="moduleMgr" class="cn.edu.zhku.oa.manager.impl.ModuleManagerImpl">
+		<property name="moduleDao" ref="moduleDao"/>
+	</bean>
+	<bean id="moduleDao" class="cn.edu.zhku.oa.dao.impl.ModuleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="roleMgr" class="cn.edu.zhku.oa.manager.impl.RoleManagerImpl">
+		<property name="roleDao" ref="roleDao"/>
+	</bean>
+	<bean id="roleDao" class="cn.edu.zhku.oa.dao.impl.RoleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="userMgr" class="cn.edu.zhku.oa.manager.impl.UserManagerImpl">
+		<property name="userDao" ref="userDao"/>
+		<property name="roleDao" ref="roleDao"/>
+		<property name="personDao" ref="personDao"/>
+	</bean>
+	<bean id="userDao" class="cn.edu.zhku.oa.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="aclManager" class="cn.edu.zhku.oa.manager.impl.AclManagerImpl">
+		<property name="aclDao" ref="aclDao"/>
+	</bean>
+	<bean id="aclDao" class="cn.edu.zhku.oa.dao.impl.AclDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="initSystemDatas" class="cn.edu.zhku.oa.manager.impl.InitSystemDatasImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="orgManager" ref="orgManager"/>
+		<property name="userManager" ref="userMgr"/>
+	</bean>
+	
+	<bean id="workflowManager" class="cn.edu.zhku.oa.manager.impl.WorkflowManagerImpl">
+		<property name="workflowDao" ref="workflowDao"/>
+		<property name="jbpmFacade" ref="jbpmFacade"/>
+	</bean>
+	<bean id="workflowDao" class="cn.edu.zhku.oa.dao.impl.WorkflowDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="documentManager" class="cn.edu.zhku.oa.manager.impl.DocumentManagerImpl">
+		<property name="documentDao" ref="documentDao"/>
+		<property name="userDao" ref="userDao"/>
+		<property name="workflowDao" ref="workflowDao"/>
+		<property name="jbpmFacade" ref="jbpmFacade"/>
+	</bean>
+	<bean id="documentDao" class="cn.edu.zhku.oa.dao.impl.DocumentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="workflowDao" ref="workflowDao"/>
+	</bean>
+	
+	<bean id="meetingRoomManager" class="cn.edu.zhku.oa.manager.impl.MeetingRoomManagerImpl">
+		<property name="meetingRoomDao" ref="meetingRoomDao"/>
+	</bean>
+	<bean id="meetingRoomDao" class="cn.edu.zhku.oa.dao.impl.MeetingRoomDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="formManager" class="cn.edu.zhku.oa.manager.impl.FormManagerImpl">
+		<property name="formDao" ref="formDao"/>
+		<property name="workflowDao" ref="workflowDao"/>
+	</bean>
+	<bean id="formDao" class="cn.edu.zhku.oa.dao.impl.FormDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="carManager" class="cn.edu.zhku.oa.manager.impl.CarManagerImpl">
+		<property name="carDao" ref="carDao"/>
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<bean id="carDao" class="cn.edu.zhku.oa.dao.impl.CarDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="infoManager" class="cn.edu.zhku.oa.manager.impl.InfoManagerImpl">
+		<property name="infoDao" ref="infoDao"/>
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<bean id="infoDao" class="cn.edu.zhku.oa.dao.impl.InfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="categoryManager" class="cn.edu.zhku.oa.manager.impl.CategoryManagerImpl">
+		<property name="categoryDao" ref="categoryDao"/>
+	</bean>
+	<bean id="categoryDao" class="cn.edu.zhku.oa.dao.impl.CategoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="useThingManager" class="cn.edu.zhku.oa.manager.impl.UseThingManagerImpl">
+		<property name="useThingDao" ref="useThingDao"/>
+		<property name="categoryDao" ref="categoryDao"/>
+	</bean>
+	<bean id="useThingDao" class="cn.edu.zhku.oa.dao.impl.UseThingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	
+	<bean id="mailDao" class="cn.edu.zhku.oa.dao.impl.MailDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="jbpmFacade" class="cn.edu.zhku.oa.manager.impl.JbpmFacadeImpl">
+		<property name="jbpmConfiguration" ref="jbpmConfiguration"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 配置SessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>	
+	</bean>    
+	
+	<!-- 事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="deploy*" propagation="REQUIRED"/>
+			<tx:method name="submit*" propagation="REQUIRED"/>
+			<tx:method name="borrow*" propagation="REQUIRED"/>
+			<tx:method name="return*" propagation="REQUIRED"/>
+			<tx:method name="*" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 那些类那些方法使用事务 -->
+	<aop:config>
+		<aop:pointcut id="allManagerMethod" expression="execution(* cn.edu.zhku.oa.*.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="allManagerMethod"/>
+	</aop:config>
+	
+	<!-- 配置JbpmConfiguration -->
+	<bean id="jbpmConfiguration" class="org.springmodules.workflow.jbpm31.LocalJbpmConfigurationFactoryBean">
+		<property name="configuration" value="classpath:jbpm.cfg.xml"/>
+	</bean>
+</beans>

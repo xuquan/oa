@@ -1,0 +1,24 @@
+/*id选择器*/
+#win{
+    /*希望窗口有边框*/
+    border:1px red solid;
+    /*希望窗口宽度和高度固定，不要太大*/
+    width:300px;
+    height:200px;
+    /*希望控制窗口的位置*/
+    position:absolute; /*绝对定位*/
+    top:100px;
+    left:350px;
+    /*希望窗口开始时不可见*/
+    display:none;
+}
+
+/*控制标题栏的样式*/
+#title,info{
+    /*控制标题栏背景色*/
+    background-color:blue;
+    /*控制标题栏中文字的颜色*/
+    color:yellow;
+    /*控制标题栏的左内边框*/
+    padding-left:3px;
+}
