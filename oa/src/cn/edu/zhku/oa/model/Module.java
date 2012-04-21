@@ -1,13 +1,19 @@
 package cn.edu.zhku.oa.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
  * 作者：许权
  * @hibernate.class table="t_module"
  */
-public class Module {
+public class Module implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6781084909800109474L;
+
 	/**
 	 * @hibernate.id
 	 * 		generator-class="native"
