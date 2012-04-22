@@ -199,7 +199,6 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	
 	<bean id="mailDao" class="cn.edu.zhku.oa.dao.impl.MailDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>

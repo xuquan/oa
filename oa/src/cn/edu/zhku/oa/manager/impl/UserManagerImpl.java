@@ -73,7 +73,7 @@ public class UserManagerImpl implements UserManager {
 		User user = userDao.findUserByName(username);
 		
 		if(user == null){
-			throw new SystemException("没有这个用户");
+			return null;
 		}
 		
 		if(!user.getPassword().equals(password)){

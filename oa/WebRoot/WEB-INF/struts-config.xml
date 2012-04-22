@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="gb2312" ?>
 
 <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
@@ -237,4 +237,3 @@
 	</action-mappings>
     <message-resources parameter="MessageResources" />
 </struts-config>
-

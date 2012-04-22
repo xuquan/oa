@@ -28,6 +28,11 @@ public class LoginAction extends DispatchAction {
 		
 		User user = userManager.login(uaf.getUsername(), uaf.getPassword());
 		
+		if(null == user){
+			response.sendRedirect("login");
+			return null;
+		}
+		
 		List modules = aclManager.searchModules(user.getId());
 		
 		request.getSession().setAttribute("login", user);

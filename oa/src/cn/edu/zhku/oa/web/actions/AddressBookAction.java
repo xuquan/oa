@@ -9,9 +9,15 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import cn.edu.zhku.oa.manager.AddressBookManager;
 import cn.edu.zhku.oa.model.AddressBook;
+import cn.edu.zhku.oa.model.DWZResponser;
 import cn.edu.zhku.oa.model.User;
+import cn.edu.zhku.oa.web.common.DWZConstants;
+import cn.edu.zhku.oa.web.common.util.DWZResopnseFactory;
 import cn.edu.zhku.oa.web.forms.AddressBookActionForm;
 
 public class AddressBookAction extends DispatchAction {
@@ -64,6 +70,15 @@ public class AddressBookAction extends DispatchAction {
 		return mapping.findForward("update_input");
 	}
 	
+	/**
+	 * 更新通讯录
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	public ActionForward update(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -76,7 +91,20 @@ public class AddressBookAction extends DispatchAction {
 		
 		addressBookManager.updateAddressBook(addressBook, abaf.getUserId());
 		
-		return mapping.findForward("pub_update_success");
+		GsonBuilder builder = new GsonBuilder();
+		Gson gson = builder.create();
+		
+		DWZResponser dwzResponser = DWZResopnseFactory.create();
+		
+		dwzResponser.setMessage(DWZConstants.SUCCESS_OPERATE);
+		dwzResponser.setStatusCode(DWZConstants.SUCCESS_CODE);
+		dwzResponser.setCallbackType(DWZConstants.CALLBACK_CLOSE_CURRENT);
+		dwzResponser.setForwardUrl("addresslist.do");
+		
+		String ret = gson.toJson(dwzResponser);
+		response.getWriter().write(ret);
+		response.getWriter().flush();
+		return null;
 	}
 	
 	public ActionForward del(ActionMapping mapping, ActionForm form,

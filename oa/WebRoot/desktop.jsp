@@ -1,44 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=GB18030"
-	pageEncoding="GB18030"%>
-<html>
-<head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<link rel='stylesheet' type='text/css' href='style/reset.css' />
-	<link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/start/jquery-ui.css' />
 	<link rel='stylesheet' type='text/css' href='style/jquery.weekcalendar.css' />
 	<link rel='stylesheet' type='text/css' href='style/demo.css' />
-	
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>
 	<script type='text/javascript' src='script/jquery.weekcalendar.js'></script>
 	<script type='text/javascript' src='script/demo.js'></script>
-
-</head>
-<body> 
-	<center>
-	<h1><font color="red">ÎÒµÄ¹¤×÷ÈÕ³Ì</font></h1>
-	</center>
 	<div id='calendar'></div>
 	<div id="event_edit_container">
 		<form>
 			<input type="hidden" />
 			<ul>
 				<li>
-					<span>ÈÕÆÚ: </span><span class="date_holder"></span> 
+					<span>æ—¥æœŸ: </span><span class="date_holder"></span> 
 				</li>
 				<li>
-					<label for="start">¿ªÊ¼Ê±¼ä: </label><select name="start"><option value="">Ñ¡Ôñ¿ªÊ¼Ê±¼ä</option></select>
+					<label for="start">å¼€å§‹æ—¶é—´: </label><select name="start"><option value="">é€‰æ‹©å¼€å§‹æ—¶é—´</option></select>
 				</li>
 				<li>
-					<label for="end">½áÊøÊ±¼ä: </label><select name="end"><option value="">Ñ¡Ôñ½áÊøÊ±¼ä</option></select>
+					<label for="end">ç»“æŸæ—¶é—´: </label><select name="end"><option value="">é€‰æ‹©ç»“æŸæ—¶é—´</option></select>
 				</li>
 				<li>
-					<label for="title">±êÌâ: </label><input type="text" name="title" />
+					<label for="title">æ ‡é¢˜: </label><input type="text" name="title" />
 				</li>
 				<li>
-					<label for="body">ÄÚÈÝ: </label><textarea name="body"></textarea>
+					<label for="body">å†…å®¹: </label><textarea name="body"></textarea>
 				</li>
 			</ul>
 		</form>
 	</div>
-</body>
-</html>

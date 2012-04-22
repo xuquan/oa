@@ -47,7 +47,7 @@ $(document).ready(function() {
                $('#calendar').weekCalendar("removeUnsavedEvents");
             },
             buttons: {
-               save : function() {
+               '保存' : function() {
                   calEvent.id = id;
                   id++;
                   calEvent.start = new Date(startField.val());
@@ -59,7 +59,7 @@ $(document).ready(function() {
                   $calendar.weekCalendar("updateEvent", calEvent);
                   $dialogContent.dialog("close");
                },
-               cancel : function() {
+               '取消' : function() {
                   $dialogContent.dialog("close");
                }
             }
@@ -96,7 +96,7 @@ $(document).ready(function() {
                $('#calendar').weekCalendar("removeUnsavedEvents");
             },
             buttons: {
-               save : function() {
+               '保存' : function() {
 
                   calEvent.start = new Date(startField.val());
                   calEvent.end = new Date(endField.val());
@@ -106,11 +106,11 @@ $(document).ready(function() {
                   $calendar.weekCalendar("updateEvent", calEvent);
                   $dialogContent.dialog("close");
                },
-               "delete" : function() {
+               '删除' : function() {
                   $calendar.weekCalendar("removeEvent", calEvent.id);
                   $dialogContent.dialog("close");
                },
-               cancel : function() {
+               '取消' : function() {
                   $dialogContent.dialog("close");
                }
             }

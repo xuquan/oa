@@ -28,7 +28,7 @@ public class AddressBookDaoImpl extends AbstractDao implements AddressBookDao {
 
 	@Override
 	public void updateAddressBook(AddressBook addressBook) {
-		getHibernateTemplate().update(addressBook);
+		getHibernateTemplate().merge(addressBook);
 	}
 
 }

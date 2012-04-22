@@ -25,5 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <html:errors />
+   <script type="text/javascript">
+   window.location.href = "index.jsp";
+   </script>
   </body>
 </html>

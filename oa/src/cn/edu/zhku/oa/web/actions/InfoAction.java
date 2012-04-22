@@ -10,8 +10,14 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
 import cn.edu.zhku.oa.manager.InfoManager;
+import cn.edu.zhku.oa.model.DWZResponser;
 import cn.edu.zhku.oa.model.Info;
+import cn.edu.zhku.oa.web.common.DWZConstants;
+import cn.edu.zhku.oa.web.common.util.DWZResopnseFactory;
 import cn.edu.zhku.oa.web.forms.InfoActionForm;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class InfoAction extends DispatchAction {
 	
@@ -32,7 +38,15 @@ public class InfoAction extends DispatchAction {
 		return mapping.findForward("index");
 	}
 	
-	//打开添加界面	
+	/**
+	 * 打开添加界面	
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	public ActionForward addInput(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -55,7 +69,15 @@ public class InfoAction extends DispatchAction {
 		return mapping.findForward("pub_add_success");
 	}
 	
-	//打开更新界面	
+	/**
+	 * 打开更新界面
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	public ActionForward updateInput(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -67,6 +89,15 @@ public class InfoAction extends DispatchAction {
 		return mapping.findForward("update_input");
 	}
 	
+	/**
+	 * 更新公共信息
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	public ActionForward update(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -79,9 +110,31 @@ public class InfoAction extends DispatchAction {
 		
 		infoManager.updateInfo(info);
 		
-		return mapping.findForward("pub_update_success");
+		GsonBuilder builder = new GsonBuilder();
+		Gson gson = builder.create();
+		
+		DWZResponser dwzResponser = DWZResopnseFactory.create();
+		
+		dwzResponser.setMessage(DWZConstants.SUCCESS_OPERATE);
+		dwzResponser.setStatusCode(DWZConstants.SUCCESS_CODE);
+		dwzResponser.setCallbackType(DWZConstants.CALLBACK_CLOSE_CURRENT);
+		dwzResponser.setForwardUrl("info.do");
+		
+		String ret = gson.toJson(dwzResponser);
+		response.getWriter().write(ret);
+		response.getWriter().flush();
+		return null;
 	}
 	
+	/**
+	 * 删除公共信息
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	public ActionForward del(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
