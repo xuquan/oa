@@ -34,7 +34,7 @@
 			<li><a class="add" target="dialog" href="org.do?method=addInput&parentId=${orgForm.parentId}"><span>添加</span></a></li>
 			<li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab" warn="请选择一个用户"><span>修改</span></a></li>
 			<li><a class="delete" title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" href="demo/common/ajaxDone.html"><span>批量删除</span></a></li>
-			<li><a href="org.do?parentId=${ppid}">返回</a></li>
+			<li><a class="icon" href="org.do?parentId=${ppid}"><span>返回</span></a></li>
 		</ul>
 	</div>
 	<table class="table" width="80%" layoutH="138">
