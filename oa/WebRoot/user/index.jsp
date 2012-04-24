@@ -15,7 +15,7 @@
 	<div class="searchBar">
 		<ul class="searchContent">
 			<li>
-				<label>机构名称：</label>
+				<label>姓名：</label>
 				<input type="text" name="keywords" value=""/>
 			</li>
 		</ul>
