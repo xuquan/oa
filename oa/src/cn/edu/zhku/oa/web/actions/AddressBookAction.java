@@ -17,7 +17,7 @@ import cn.edu.zhku.oa.model.AddressBook;
 import cn.edu.zhku.oa.model.DWZResponser;
 import cn.edu.zhku.oa.model.User;
 import cn.edu.zhku.oa.web.common.DWZConstants;
-import cn.edu.zhku.oa.web.common.util.DWZResopnseFactory;
+import cn.edu.zhku.oa.web.common.util.DWZResponseFactory;
 import cn.edu.zhku.oa.web.forms.AddressBookActionForm;
 
 public class AddressBookAction extends DispatchAction {
@@ -94,7 +94,7 @@ public class AddressBookAction extends DispatchAction {
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		
-		DWZResponser dwzResponser = DWZResopnseFactory.create();
+		DWZResponser dwzResponser = DWZResponseFactory.create();
 		
 		dwzResponser.setMessage(DWZConstants.SUCCESS_OPERATE);
 		dwzResponser.setStatusCode(DWZConstants.SUCCESS_CODE);
