@@ -13,7 +13,6 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ExceptionHandler;
 import org.apache.struts.config.ExceptionConfig;
 
-import cn.edu.zhku.oa.manager.SystemException;
 
 public class SystemExceptionHandler extends ExceptionHandler {
 

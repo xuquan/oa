@@ -10,7 +10,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.log4j.Logger;
 
-import cn.edu.zhku.oa.manager.SystemException;
+import cn.edu.zhku.oa.web.SystemException;
 
 /**
  * ¹«ÎÄ

@@ -1,5 +1,7 @@
+#Mon Apr 23 22:37:33 CST 2012
 eclipse.preferences.version=1
 encoding//WebRoot/address_book/index.jsp=UTF-8
 encoding//WebRoot/dwz/js/dwz.ajax.js=UTF-8
+encoding//WebRoot/dwz/js/dwz.dialog.js=UTF-8
+encoding//WebRoot/dwz/js/dwz.regional.zh.js=UTF-8
 encoding//WebRoot/main.jsp=UTF-8
-encoding/<project>=GBK

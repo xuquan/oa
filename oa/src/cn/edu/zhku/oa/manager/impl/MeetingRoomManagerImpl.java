@@ -5,9 +5,9 @@ import java.util.List;
 
 import cn.edu.zhku.oa.dao.MeetingRoomDao;
 import cn.edu.zhku.oa.manager.MeetingRoomManager;
-import cn.edu.zhku.oa.manager.SystemException;
 import cn.edu.zhku.oa.model.MeetingRoom;
 import cn.edu.zhku.oa.model.MeetingRoomApply;
+import cn.edu.zhku.oa.web.SystemException;
 
 public class MeetingRoomManagerImpl implements MeetingRoomManager {
 

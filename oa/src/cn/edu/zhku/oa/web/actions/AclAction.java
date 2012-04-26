@@ -12,9 +12,9 @@ import cn.edu.zhku.oa.PagerModel;
 import cn.edu.zhku.oa.SystemContext;
 import cn.edu.zhku.oa.manager.ModuleManager;
 import cn.edu.zhku.oa.manager.RoleManager;
-import cn.edu.zhku.oa.manager.SystemException;
 import cn.edu.zhku.oa.manager.UserManager;
 import cn.edu.zhku.oa.model.ACL;
+import cn.edu.zhku.oa.web.SystemException;
 import cn.edu.zhku.oa.web.forms.AclActionForm;
 
 public class AclAction extends DispatchAction {

@@ -3,8 +3,8 @@ package cn.edu.zhku.oa.manager.impl;
 import cn.edu.zhku.oa.PagerModel;
 import cn.edu.zhku.oa.dao.OrgDao;
 import cn.edu.zhku.oa.manager.OrgManager;
-import cn.edu.zhku.oa.manager.SystemException;
 import cn.edu.zhku.oa.model.Organization;
+import cn.edu.zhku.oa.web.SystemException;
 
 /**
  * 机构管理实现类

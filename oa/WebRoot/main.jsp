@@ -85,8 +85,8 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="http://j-ui.com">标志</a>
 				<ul class="nav">				
-					<li><a href="changepwd.html" target="dialog" width="600">修改密码</a></li>
-					<li><a href="login.html">退出</a></li>
+					<li><a href="user.do?method=chgpsw" target="dialog" width="600">修改密码</a></li>
+					<li><a href="login.do?method=logout">退出</a></li>
 				</ul>
 			</div>
 		</div>

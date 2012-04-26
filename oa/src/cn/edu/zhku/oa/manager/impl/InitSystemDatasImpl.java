@@ -12,7 +12,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cn.edu.zhku.oa.manager.InitSystemDatas;
 import cn.edu.zhku.oa.manager.OrgManager;
-import cn.edu.zhku.oa.manager.SystemException;
 import cn.edu.zhku.oa.manager.UserManager;
 import cn.edu.zhku.oa.model.ACL;
 import cn.edu.zhku.oa.model.Module;
@@ -21,6 +20,7 @@ import cn.edu.zhku.oa.model.Permission;
 import cn.edu.zhku.oa.model.Person;
 import cn.edu.zhku.oa.model.Role;
 import cn.edu.zhku.oa.model.User;
+import cn.edu.zhku.oa.web.SystemException;
 
 public class InitSystemDatasImpl extends HibernateDaoSupport implements
 		InitSystemDatas {

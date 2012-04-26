@@ -82,8 +82,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 		return def.getName();
 	}
 
-	public String nextStep(long processInstanceId, String actorId,
-			String transitionName) {
+	public String nextStep(long processInstanceId, String actorId,String transitionName) {
 		
 		JbpmContext context = getJbpmContext();
 		ProcessInstance instance = context.getProcessInstance(processInstanceId);
@@ -103,8 +102,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 			}
 		}else{
 			List taskInstances = context.getTaskMgmtSession().findTaskInstances(actorId);
-			for (Iterator iterator = taskInstances.iterator(); iterator
-					.hasNext();) {
+			for (Iterator iterator = taskInstances.iterator(); iterator.hasNext();) {
 				TaskInstance ti = (TaskInstance) iterator.next();
 				if(ti.getProcessInstance().getId() == processInstanceId){
 					if(transitionName == null){
@@ -119,8 +117,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 			
 			//查找所属组的任务实例
 			List pooledTaskInstances = context.getTaskMgmtSession().findPooledTaskInstances(actorId);
-			for (Iterator iterator = pooledTaskInstances.iterator(); iterator
-					.hasNext();) {
+			for (Iterator iterator = pooledTaskInstances.iterator(); iterator.hasNext();) {
 				TaskInstance ti = (TaskInstance) iterator.next();
 				if(ti.getProcessInstance().getId() == processInstanceId){
 					if(transitionName == null){
@@ -146,8 +143,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 		Object[] os = new Object[2];
 		//搜索用户对应的所有的任务实例
 		List taskInstances = context.getTaskMgmtSession().findTaskInstances(actorId);
-		for (Iterator iterator = taskInstances.iterator(); iterator
-				.hasNext();) {
+		for (Iterator iterator = taskInstances.iterator(); iterator.hasNext();) {
 			TaskInstance ti = (TaskInstance) iterator.next();
 			if(ti.getProcessInstance().getId() == processInstanceId){
 				
@@ -201,8 +197,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 		
 		//查找所属组的任务实例
 		List pooledTaskInstances = context.getTaskMgmtSession().findPooledTaskInstances(actorId);
-		for (Iterator iterator = pooledTaskInstances.iterator(); iterator
-				.hasNext();) {
+		for (Iterator iterator = pooledTaskInstances.iterator(); iterator.hasNext();) {
 			TaskInstance ti = (TaskInstance) iterator.next();
 			Integer docId = (Integer)ti.getProcessInstance().getContextInstance().getVariable("document");
 			docIds.add(docId);
@@ -228,8 +223,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 			transitions = instance.getRootToken().getAvailableTransitions();
 		}else{
 			List taskInstances = context.getTaskMgmtSession().findTaskInstances(actorId);
-			for (Iterator iterator = taskInstances.iterator(); iterator
-					.hasNext();) {
+			for (Iterator iterator = taskInstances.iterator(); iterator.hasNext();) {
 				TaskInstance ti = (TaskInstance) iterator.next();
 				if(ti.getProcessInstance().getId() == processInstanceId){
 					transitions = ti.getAvailableTransitions();
@@ -239,8 +233,7 @@ public class JbpmFacadeImpl extends AbstractDao implements JbpmFacade {
 			
 			//查找所属组的任务实例
 			List pooledTaskInstances = context.getTaskMgmtSession().findPooledTaskInstances(actorId);
-			for (Iterator iterator = pooledTaskInstances.iterator(); iterator
-					.hasNext();) {
+			for (Iterator iterator = pooledTaskInstances.iterator(); iterator.hasNext();) {
 				TaskInstance ti = (TaskInstance) iterator.next();
 				if(ti.getProcessInstance().getId() == processInstanceId){
 					transitions = ti.getAvailableTransitions();

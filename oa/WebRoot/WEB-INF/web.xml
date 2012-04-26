@@ -7,6 +7,23 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!--Spring MVC Processes application requests 
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/serlvet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	-->
+	
 	<!-- Standard Action Servlet Configuration (with debugging) -->
 	<servlet>
 		<servlet-name>action</servlet-name>
@@ -31,7 +48,7 @@
 		<servlet-class>cn.edu.zhku.oa.web.UtilDateConverterInitServlet</servlet-class>
 		<load-on-startup>3</load-on-startup>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>dwr-invoker</servlet-name>
 		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
@@ -52,7 +69,7 @@
 		<servlet-name>dwr-invoker</servlet-name>
 		<url-pattern>/dwr/*</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- Standard Action Servlet Mapping -->
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
@@ -61,9 +78,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<!--
-			<param-value>classpath*:applicationContext-*.xml,/WEB-INF/applicationContext-*.xml</param-value>
-		-->
+		<!-- <param-value>classpath*:applicationContext-*.xml,/WEB-INF/applicationContext-*.xml</param-value> -->
 		<param-value>classpath*:beans.xml</param-value>
 	</context-param>
 
@@ -87,13 +102,14 @@
 	<filter>
 		<filter-name>hibernateFilter</filter-name>
 		<filter-class>
-			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+			org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+		</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>hibernateFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<filter>
 		<filter-name>pagerFilter</filter-name>
 		<filter-class>cn.edu.zhku.oa.web.PagerFilter</filter-class>

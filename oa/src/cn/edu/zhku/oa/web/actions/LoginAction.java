@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -29,7 +30,7 @@ public class LoginAction extends DispatchAction {
 		User user = userManager.login(uaf.getUsername(), uaf.getPassword());
 		
 		if(null == user){
-			response.sendRedirect("login");
+			response.sendRedirect("index.jsp");
 			return null;
 		}
 		
@@ -42,6 +43,24 @@ public class LoginAction extends DispatchAction {
 		return mapping.findForward("main");
 	}
 
+	/**
+	 * 退出系统
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	public ActionForward logout(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		//获取当前登录用户的所有授权
+		HttpSession session = request.getSession();
+		session.invalidate();
+		response.sendRedirect("index.jsp");
+		return null;
+	}
+	
 	public void setUserManager(UserManager userManager) {
 		this.userManager = userManager;
 	}

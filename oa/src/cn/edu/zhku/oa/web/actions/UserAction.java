@@ -92,7 +92,7 @@ public class UserAction extends DispatchAction {
 		
 		userMgr.updatePassword(uaf.getId(), uaf.getOldPassword(), uaf.getPassword());
 		
-		return mapping.findForward("pub_update_success");
+		return mapping.findForward("done");
 	}
 	
 	public ActionForward chgpsw(ActionMapping mapping, ActionForm form,

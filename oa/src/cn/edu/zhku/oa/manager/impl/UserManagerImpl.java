@@ -7,10 +7,10 @@ import java.util.List;
 import cn.edu.zhku.oa.dao.PersonDao;
 import cn.edu.zhku.oa.dao.RoleDao;
 import cn.edu.zhku.oa.dao.UserDao;
-import cn.edu.zhku.oa.manager.SystemException;
 import cn.edu.zhku.oa.manager.UserManager;
 import cn.edu.zhku.oa.model.User;
 import cn.edu.zhku.oa.model.UsersRoles;
+import cn.edu.zhku.oa.web.SystemException;
 
 public class UserManagerImpl implements UserManager {
 	private UserDao userDao;

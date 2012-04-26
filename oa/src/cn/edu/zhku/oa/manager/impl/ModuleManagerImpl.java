@@ -3,8 +3,8 @@ package cn.edu.zhku.oa.manager.impl;
 import cn.edu.zhku.oa.PagerModel;
 import cn.edu.zhku.oa.dao.ModuleDao;
 import cn.edu.zhku.oa.manager.ModuleManager;
-import cn.edu.zhku.oa.manager.SystemException;
 import cn.edu.zhku.oa.model.Module;
+import cn.edu.zhku.oa.web.SystemException;
 
 public class ModuleManagerImpl implements ModuleManager {
 	

@@ -1,4 +1,4 @@
-package cn.edu.zhku.oa.manager;
+package cn.edu.zhku.oa.web;
 
 public class SystemException extends RuntimeException {
 

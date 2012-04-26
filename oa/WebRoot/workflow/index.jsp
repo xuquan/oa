@@ -28,6 +28,7 @@
 	</form>
 </div>
 
+<form>
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
@@ -38,7 +39,7 @@
 	<table class="table" width="80%" layoutH="138">
 		<thead>
 			<tr>
-			<th width="8%"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+			<th width="8%"><input type="checkbox" group="selectFlag" class="checkboxCtrl"></th>
             <th width="8%" height="18">序号</th>
             <th width="30%" height="18">流程名称</th>
             <th width="10%" height="18">操作</th>
@@ -54,7 +55,7 @@
 			            <td>${workflow.id}</td>
 			            <td>${workflow.name}</td>
 			            <td>
-							<a title="删除" target="ajaxTodo" class="btnDel" onclick="del('workflow.do?method=del&id=${workflow.id }');">删除</a>
+							<a href="workflow.do?method=del&id=${workflow.id }" title="确定要删除吗?" target="ajaxTodo" class="btnDel">删除</a>
 						</td>
           			</tr>
 				</c:forEach>
@@ -67,7 +68,7 @@
 		</tbody>
 	</table>
 	<div class="panelBar">
-		<pg:pager url="org.do" items="${pm.total}" export="currentPageNumber=pageNumber">
+		<pg:pager url="workflow.do" items="${pm.total}" export="currentPageNumber=pageNumber">
 		<pg:param name="parentId"/>
 		<div class="pages">
 			<span>显示</span>
@@ -83,3 +84,4 @@
 		</pg:pager>
 	</div>
 </div>
+</form>

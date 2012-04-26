@@ -26,18 +26,19 @@
 	<global-exceptions>
 		<exception 
 			key="errors.detail" 
-			type="java.lang.Exception" 
+			type="cn.edu.zhku.oa.web.SystemException" 
+			handler="cn.edu.zhku.oa.web.SystemExceptionHandler"
 			scope="request" 
 			path="/common/exception.jsp"
-			handler="cn.edu.zhku.oa.web.SystemExceptionHandler"
 		/>
 			
 	</global-exceptions>
 	<global-forwards>
+		<forward name="done" path="/common/ajaxDone.jsp"/>
 		<forward name="pub_add_success" path="/common/pub_add_success.jsp"/>
 		<forward name="pub_del_success" path="/common/pub_del_success.jsp"/>
 		<forward name="pub_update_success" path="/common/pub_update_success.jsp"/>
-		<forward name="login" path="/index.jsp" redirect="true"/>
+		<forward name="logon" path="/index.jsp"/>
 	</global-forwards>
 	<action-mappings>
 		<action 
@@ -134,6 +135,7 @@
 			parameter="method"
 		>
 			<forward name="index" path="/workflow/index.jsp"/>
+			<forward name="add_input" path="/workflow/add_input.jsp"/>
 			<forward name="add_success" path="/workflow.do" redirect="true"/>
 		</action>
 		<action 
