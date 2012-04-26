@@ -2,9 +2,9 @@ package cn.edu.zhku.oa.web.common.util;
 
 import cn.edu.zhku.oa.model.DWZResponser;
 
-public class DWZResopnseFactory {
+public class DWZResponseFactory {
 	
-	private DWZResopnseFactory(){};
+	private DWZResponseFactory(){};
 	
 	public static DWZResponser create(){
 		return new DWZResponser();

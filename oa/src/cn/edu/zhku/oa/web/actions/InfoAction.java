@@ -13,7 +13,7 @@ import cn.edu.zhku.oa.manager.InfoManager;
 import cn.edu.zhku.oa.model.DWZResponser;
 import cn.edu.zhku.oa.model.Info;
 import cn.edu.zhku.oa.web.common.DWZConstants;
-import cn.edu.zhku.oa.web.common.util.DWZResopnseFactory;
+import cn.edu.zhku.oa.web.common.util.DWZResponseFactory;
 import cn.edu.zhku.oa.web.forms.InfoActionForm;
 
 import com.google.gson.Gson;
@@ -113,7 +113,7 @@ public class InfoAction extends DispatchAction {
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		
-		DWZResponser dwzResponser = DWZResopnseFactory.create();
+		DWZResponser dwzResponser = DWZResponseFactory.create();
 		
 		dwzResponser.setMessage(DWZConstants.SUCCESS_OPERATE);
 		dwzResponser.setStatusCode(DWZConstants.SUCCESS_CODE);
